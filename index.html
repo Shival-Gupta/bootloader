@@ -1,0 +1,87 @@
+<HTML>
+  <HEAD>
+    <TITLE>
+      Bootloader - Shival
+    </TITLE>
+  </HEAD>
+  <BODY>
+    <P><BR/>
+      <A HREF="https://www.canva.com/design/DAFYvYbNOak/Hn6Yqwb8OLaUepgR8-kjwA/view">Watch Bootloader presentation</A><BR/>
+    </P>
+    <P><BR/>
+      <A HREF="https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/nasm-2.16.01.tar.gz">Download NASM</A><BR/>
+    </P>
+    <P><BR/>
+      <B>Install NASM</B><BR/>
+      ./configure<BR/>
+      make<BR/>
+      make install<BR/>
+      whereis nasm<BR/>
+    </P>
+    <P><BR/>
+      <B>firstBootloader.asm</B><BR/>
+      [BITS 16]<BR/>
+      [ORG 0x7C00]<BR/>
+      JMP $<BR/>
+      TIMES 510 - ($ - $$) db 0<BR/>
+      DW 0xAA55<BR/>
+    </P>
+    <P><BR/>
+      <B>secondBootloader.asm</B><BR/>
+      [BITS 16]<BR/>
+      [ORG 0x7C00]<BR/>
+<BR/>
+      MOV AL, 65<BR/>
+      CALL PrintCharacter<BR/>
+      JMP $<BR/>
+<BR/>
+      PrintCharacter:<BR/>
+      MOV AH, 0x0E<BR/>
+      MOV BH, 0x00<BR/>
+      MOV BL, 0x07<BR/>
+<BR/>
+      INT 0x10<BR/>
+      RET<BR/>
+<BR/>
+      TIMES 510 - ($ - $$) db 0<BR/>
+      DW 0xAA55<BR/>
+    </P>
+    <p><BR/>
+      <b>thirdBootloader.asm</b><BR/>
+      [BITS 16]<BR/>
+      [ORG 0x7C00]<BR/>
+<BR/>
+      MOV SI, HelloString<BR/>
+      CALL PrintCharacter<BR/>
+      JMP $<BR/>
+<BR/>
+      PrintCharacter:<BR/>
+      MOV AH, 0x0E<BR/>
+      MOV BH, 0x00<BR/>
+      MOV BL, 0x07<BR/>
+<BR/>
+      INT 0x10<BR/>
+      RET<BR/>
+<BR/>
+      PrintString:<BR/>
+<BR/>
+      next_character:<BR/>
+      MOV AL, [SI]<BR/>
+      INC SI<BR/>
+      OR AL, AL<BR/>
+      JZ exit_function<BR/>
+      CALL PrintCharacter<BR/>
+      JMP next_character<BR/>
+      exit_function:<BR/>
+      RET<BR/>
+<BR/>
+      HelloString db 'Hellow World', 0<BR/>
+<BR/>
+      TIMES 510 - ($ - $$) db 0<BR/>
+      DW 0xAA55<BR/>
+<BR/>
+    </p>
+    <p>
+      <a href="https://drive.google.com/file/d/1YraA1utTeyUMTjPg5oDsDc9CtU5oCol_/view?usp=share_link">Bootloader programmers Manual</a>
+  </BODY>
+</HTML>
