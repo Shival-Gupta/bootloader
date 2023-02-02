@@ -2,7 +2,7 @@
 ## Bootloader
 
 <a href="https://www.canva.com/design/DAFYvYbNOak/Hn6Yqwb8OLaUepgR8-kjwA/view">Presentation on bootloader</a><br/>
-<a href="shival-gupta.github.io/bootloader/">Webpage documentation</a><br/>
+<a href="https://shival-gupta.github.io/bootloader/">Webpage documentation</a><br/>
 <a href="https://drive.google.com/file/d/1YraA1utTeyUMTjPg5oDsDc9CtU5oCol_/view?usp=share_link">Bootloader manual</a><br/>
 <hr/>
 
