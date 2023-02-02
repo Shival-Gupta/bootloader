@@ -3,6 +3,15 @@
     <TITLE>
       Bootloader - Shival
     </TITLE>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Poppins';
+        font-size: 22px;
+      }
+    </style>
   </HEAD>
   <BODY>
     <P><BR/>
@@ -13,21 +22,26 @@
     </P>
     <P><BR/>
       <B>Install NASM</B><BR/>
+      <TT>
       ./configure<BR/>
       make<BR/>
       make install<BR/>
       whereis nasm<BR/>
+      </TT>
     </P>
     <P><BR/>
       <B>firstBootloader.asm</B><BR/>
+      <TT>
       [BITS 16]<BR/>
       [ORG 0x7C00]<BR/>
       JMP $<BR/>
       TIMES 510 - ($ - $$) db 0<BR/>
       DW 0xAA55<BR/>
+      </TT>
     </P>
     <P><BR/>
       <B>secondBootloader.asm</B><BR/>
+      <TT>
       [BITS 16]<BR/>
       [ORG 0x7C00]<BR/>
 <BR/>
@@ -45,9 +59,11 @@
 <BR/>
       TIMES 510 - ($ - $$) db 0<BR/>
       DW 0xAA55<BR/>
+      </TT>
     </P>
     <p><BR/>
       <b>thirdBootloader.asm</b><BR/>
+      <TT>
       [BITS 16]<BR/>
       [ORG 0x7C00]<BR/>
 <BR/>
@@ -79,6 +95,7 @@
 <BR/>
       TIMES 510 - ($ - $$) db 0<BR/>
       DW 0xAA55<BR/>
+      </TT>
 <BR/>
     </p>
     <p>
