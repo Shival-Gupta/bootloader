@@ -7,7 +7,10 @@
 <hr/>
 
 **Install NASM**
-<A HREF="https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/nasm-2.16.01.tar.gz"><b>Download NASM</b></A>
+
+<A HREF="https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/nasm-2.16.01.tar.gz"><b>Direct Download link: NASM</b></A><br/>
+<A HREF="https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/"><b>Browse NASM Release Builds</b></A><br/>
+
 ```
 ./configure
 make
